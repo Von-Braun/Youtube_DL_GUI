@@ -107,7 +107,7 @@ def clear():
         save= os.getcwd()
         if not os.path.exists(drop_text1.get()):
             print '\a'
-            if tkMessageBox.askyesno('Directory not found', 'This directory does not excist.\nWould you like to create it?'):
+            if tkMessageBox.askyesno('Directory not found', 'This directory does not exist.\nWould you like to create it?'):
                 os.makedirs(drop_text1.get())
         os.chdir(drop_text1.get())
         X=Popen('explorer '+ os.getcwd())
@@ -163,7 +163,6 @@ def download():
     paste()
 
     if checkbox_value.get():
-        #print entry_text.get()+'\n'
         temprary_on()
         options=''
         if drop_text_format.get()!='':
@@ -186,7 +185,6 @@ def download():
         root.after(30, lambda: root.focus_force())
         temprary_off()
     else:  
-        #print entry_text.get()+'\n'
         temprary_on()
         options=' '
         if drop_text_format.get()!='':
@@ -203,7 +201,6 @@ def download():
         if entry_text_extra.get()!='':
             options=options+' '+entry_text_extra.get()
         options=options+' '
-        #print options
         records.add(entry_text.get())
         set_config()
         P=Popen('youtube-dl '+options+entry_text.get(), creationflags=CREATE_NEW_CONSOLE) #downloads single videos
@@ -280,10 +277,6 @@ def settings():
         root.focus_force()     
         root.wm_attributes("-topmost", 0)
     
-        #configfile.close()
-        #print config.items('entryboxes')
-        #config.write(config_file)
-        #config_file.close()
     def clearall(x=1):
         global downloads_directory
         #entry boxes
@@ -318,7 +311,6 @@ def settings():
     if checkbox_value_subs.get()==0:
         drop_text_subs.set('')
     drop_subs = ttk.Combobox(top, textvariable=drop_text_subs)
-    #subtitles=['english','spanish','danish','japanese']
     drop_subs['values'] = subtitles
     drop_subs.grid(row=0, column=1,sticky=W+E)
     label_subs = Label(top, text='Subtitles')
@@ -467,7 +459,6 @@ entry.grid(row=0, column=1,columnspan=3) #place the entry boxes in the window
 button_1.grid(row=0, column=4) #place a button in the window
 button_2.grid(row=1, column=4)
 button_3.grid(row=1, column=3)
-#drop.grid(row=1, column=2)
 drop1.grid(row=1, column=1)
 checkbox_1.grid(row=1,column=2)
 
