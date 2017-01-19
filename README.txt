@@ -10,7 +10,7 @@ youtube-gui.pyw #this is the main program that you will run
 Required
 --------
 
-The following modules must be installed for youtube-gui to fully function:
+The following must be installed for youtube-gui to fully function:
 
 youtube-dl
 ffmpeg
@@ -47,7 +47,7 @@ If this is the first time, please run youtube-dl.pyw.
 That will generate config.ini(stores settings) and the downloads folder(where
 your downloads will be stored).
 
-You will first see three buttons a checkbox,dropbox & entry box:
+You will first see three buttons, a checkbox,dropbox & entry box:
 
 [Paste & Download]
 This will pull a url from the clipboard and download the file. It will be
@@ -66,7 +66,7 @@ If this is checked youtube-dl will attempt to download the playlist in the
 url.
 
 [Entry Box]
-This show the last downloaded url.
+This shows the last downloaded url.
 
 [Settings]
 This allows you to configure how the file should be downloaded. More is
@@ -124,18 +124,3 @@ The current directory of the downloads folder.
 Bug Reporting & contact info
 ----------------------------
 please contact me at gerardkoufax@gmail.com
-
-
-------------------------------------------------------------------------------
-Copyright (C) 1988-2155 Altos Computer Systems & Gerard Koufax.
-
-Youtube-GUI ver 6.6.6
-All rights reserved. This program or any portion thereof may not be 
-reproduced or used in any manner whatsoever without the express written 
-permission of the programmer.
-
-Youtube-GUI is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
-A PARTICULAR PURPOSE.
-
-Produced in the United States of America.
