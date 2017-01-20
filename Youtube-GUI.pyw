@@ -54,7 +54,6 @@ root = Tk() #create the window
 root.wm_title("Youtube-dl") #name the window
 root.resizable(0,0)
 default_font = tkFont.Font(size=9,weight='bold')
-#default_font.configure(size=10)
 root.option_add("*Font", default_font)
 index_extra=0
 reset_temporary=os.getcwd()
@@ -165,8 +164,6 @@ def directory():
 
 
 def download():
-    #-f bestaudio
-    #best, bestvideo, bestaudio and worst
     paste()
     temprary_on()
     options=' '
@@ -240,7 +237,7 @@ def settings():
     global checkbox_value_audio_format, drop_text_audio_format
     x = root.winfo_rootx()
     y = root.winfo_rooty()
-    height = 0#root.winfo_height()
+    height = 0
     width = 100
     geom = "+%d+%d" % (x+width,y+height)
     top = Toplevel()
@@ -262,10 +259,6 @@ def settings():
         root.focus_force()     
         root.wm_attributes("-topmost", 0)
     
-        #configfile.close()
-        #print config.items('entryboxes')
-        #config.write(config_file)
-        #config_file.close()
     def clearall(x=1):
         global downloads_directory
         #entry boxes
@@ -300,7 +293,6 @@ def settings():
     if checkbox_value_subs.get()==0:
         drop_text_subs.set('')
     drop_subs = ttk.Combobox(top, textvariable=drop_text_subs)
-    #subtitles=['english','spanish','danish','japanese']
     drop_subs['values'] = subtitles
     drop_subs.grid(row=0, column=1,sticky=W+E)
     label_subs = Label(top, text='Subtitles')
@@ -356,7 +348,6 @@ def settings():
     checkbox_quality.grid(row=3, column=2)
     
     #create extra entry box
-    #Lucida Console
     helv36 = tkFont.Font(family='Lucida Console', size=10, weight='normal') 
     if checkbox_value_extra.get()==0:
         entry_text_extra.set('')
@@ -449,7 +440,6 @@ entry.grid(row=0, column=1,columnspan=3) #place the entry boxes in the window
 button_1.grid(row=0, column=4) #place a button in the window
 button_2.grid(row=1, column=4)
 button_3.grid(row=1, column=3)
-#drop.grid(row=1, column=2)
 drop1.grid(row=1, column=1)
 checkbox_1.grid(row=1,column=2)
 
