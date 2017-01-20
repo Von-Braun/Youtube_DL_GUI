@@ -15,11 +15,11 @@ Required
 
 The following must be installed for youtube-gui to fully function:
 
-youtube-dl
+* youtube-dl
 
-ffmpeg
+* ffmpeg
 
-python
+* python
 
 
 Installation(in this order)
@@ -27,25 +27,22 @@ Installation(in this order)
 
 * python
 
-goto https://www.python.org/download/
+  * goto https://www.python.org/download/
 
-click download python 2.x.x
+  * click download python 2.x.x
 
-run the downloaded installer
+  * run the downloaded installer
 
 * youtube-dl
 
-type "pip install youtube_dl" into the cmd prompt
+  * type "pip install youtube_dl" into the cmd prompt
 
 * ffmpeg
 
-[32-bit]
+1. 
+  * [32-bit]: goto http://ffmpeg.zeranoe.com/builds and download the 32-bit static installer
 
-1. goto http://ffmpeg.zeranoe.com/builds and download the 32-bit static installer
-
-[64-bit]
-
-1. goto http://ffmpeg.zeranoe.com/builds and download the 64-bit static installer
+  * [64-bit]: goto http://ffmpeg.zeranoe.com/builds and download the 64-bit static installer
 
 2. copy the directory ffmpeg was installed to
 
@@ -69,29 +66,29 @@ That will generate config.ini(stores settings) and the downloads folder(where yo
 
 You will first see three buttons, a checkbox,dropbox & entry box:
 
-[Paste & Download]
+**[Paste & Download]**
 
-This will pull a url from the clipboard and download the file. It will be  placed in the selected directory.
+  * This will pull a url from the clipboard and download the file. It will be  placed in the selected directory.
 
-[Open Folder]
+**[Open Folder]**
 
-This will open the selected directory.
+  * This will open the selected directory.
 
-[dropbox]
+**[dropbox]**
 
-Enter a folder name(or select from the dropdown menu) to select the folder to place downloads in(all folders are in the downloads folder). If a folder does not exist it will be created.
+  * Enter a folder name(or select from the dropdown menu) to select the folder to place downloads in(all folders are in the downloads folder). If a folder does not exist it will be created.
 
-[Download Playlist]
+**[Download Playlist]**
 
-If this is checked youtube-dl will attempt to download the playlist in the url.
+  * If this is checked youtube-dl will attempt to download the playlist in the url.
 
-[Entry Box]
+**[Entry Box]**
 
-This shows the last downloaded url.
+  * This shows the last downloaded url.
 
-[Settings]
+**[Settings]**
 
-This allows you to configure how the file should be downloaded. More is explained in the Settings menu section.
+  *This allows you to configure how the file should be downloaded. More is explained in the Settings menu section.
 
 
 Settings Menu
