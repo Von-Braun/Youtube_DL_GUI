@@ -107,7 +107,7 @@ def clear():
         save= os.getcwd()
         if not os.path.exists(drop_text1.get()):
             print '\a'
-            if tkMessageBox.askyesno('Directory not found', 'This directory does not exist.\nWould you like to create it?'):
+            if tkMessageBox.askyesno('Directory not found', 'This directory does not excist.\nWould you like to create it?'):
                 os.makedirs(drop_text1.get())
         os.chdir(drop_text1.get())
         X=Popen('explorer '+ os.getcwd())
@@ -119,7 +119,11 @@ def get_audio_and_video():
     paste()
     records.add(entry_text.get())
     set_config()
-    options='-f bestaudio --ignore-errors '
+    options='-f bestaudio '
+    if checkbox_value.get():
+        options=options+' --ignore-errors '
+    else:
+        options=options+' --no-playlist '
     if drop_text_audio_format.get()!='':
         options=options+str(' -x --audio-format '+drop_text_audio_format.get()+' ')
     P=Popen("youtube-dl " +options+entry_text.get(), creationflags=CREATE_NEW_CONSOLE) #downloads the available playlist
@@ -127,7 +131,10 @@ def get_audio_and_video():
 
     records.add(entry_text.get())
     set_config()
-    options=' --ignore-errors '
+    if checkbox_value.get():
+        options=' --ignore-errors '
+    else:
+        options=' --no-playlist '
     if drop_text_convert.get()!='':
         options=options+str(' --recode-video '+drop_text_convert.get()+' ')
     P=Popen("youtube-dl " +options+entry_text.get(), creationflags=CREATE_NEW_CONSOLE) #downloads the available playlist
@@ -161,52 +168,31 @@ def download():
     #-f bestaudio
     #best, bestvideo, bestaudio and worst
     paste()
-
+    temprary_on()
+    options=' '
+    if drop_text_format.get()!='':
+        options=options+drop_text_format.get()+' '
     if checkbox_value.get():
-        temprary_on()
-        options=''
-        if drop_text_format.get()!='':
-            options=options+drop_text_format.get()
         options=options+' --ignore-errors'
-        if drop_text_subs.get()!='':
-            options=options+str(' --sub-lang '+drop_text_subs.get()+' --write-sub')
-        if drop_text_convert.get()!='':
-            options=options+str(' --recode-video '+drop_text_convert.get()+' ')
-        if drop_text_audio_format.get()!='':
-            options=options+str(' -x --audio-format '+drop_text_audio_format.get()+' ')
-        if drop_text_quality.get()!='':
-            options=options+str(' -f '+drop_text_quality.get().split(',')[2]+' ')
-        if entry_text_extra.get()!='':
-            options=options+entry_text_extra.get()
-        options=options+' '
-        records.add(entry_text.get())
-        set_config()
-        P=Popen("youtube-dl " +options+entry_text.get(), creationflags=CREATE_NEW_CONSOLE) #downloads the available playlist
-        root.after(30, lambda: root.focus_force())
-        temprary_off()
     else:  
-        temprary_on()
-        options=' '
-        if drop_text_format.get()!='':
-            options=options+drop_text_format.get()+' '
         options=options+' --no-playlist '
-        if drop_text_subs.get()!='':
-            options=options+str(' --sub-lang '+drop_text_subs.get()+' --write-sub ')
-        if drop_text_convert.get()!='':
-            options=options+str(' --recode-video '+drop_text_convert.get()+' ')
-        if drop_text_audio_format.get()!='':
-            options=options+str(' -x --audio-format '+drop_text_audio_format.get()+' ')
-        if drop_text_quality.get()!='':
-            options=options+str(' -f '+drop_text_quality.get().split(',')[2]+' ')
-        if entry_text_extra.get()!='':
-            options=options+' '+entry_text_extra.get()
-        options=options+' '
-        records.add(entry_text.get())
-        set_config()
-        P=Popen('youtube-dl '+options+entry_text.get(), creationflags=CREATE_NEW_CONSOLE) #downloads single videos
-        root.after(30, lambda: root.focus_force())
-        temprary_off()
-
+    if drop_text_subs.get()!='':
+        options=options+str(' --sub-lang '+drop_text_subs.get()+' --write-sub')
+    if drop_text_convert.get()!='':
+        options=options+str(' --recode-video '+drop_text_convert.get()+' ')
+    if drop_text_audio_format.get()!='':
+        options=options+str(' -x --audio-format '+drop_text_audio_format.get()+' ')
+    if drop_text_quality.get()!='':
+        options=options+str(' -f '+drop_text_quality.get().split(',')[2]+' ')
+    if entry_text_extra.get()!='':
+        options=options+' '+entry_text_extra.get()
+    options=options+' '
+    records.add(entry_text.get())
+    set_config()
+    P=Popen("youtube-dl " +options+entry_text.get(), creationflags=CREATE_NEW_CONSOLE) #downloads the available playlist
+    root.after(30, lambda: root.focus_force())
+    temprary_off()
+    
 def temprary_on():
     global entry_text_temporary, reset_temporary
     reset_temporary=os.getcwd()
@@ -215,7 +201,6 @@ def temprary_on():
 
 def temprary_off():
     os.chdir(reset_temporary)
-
 
 def update_drop1(x):
     drop1['values'] = next(os.walk('.'))[1]
@@ -277,6 +262,10 @@ def settings():
         root.focus_force()     
         root.wm_attributes("-topmost", 0)
     
+        #configfile.close()
+        #print config.items('entryboxes')
+        #config.write(config_file)
+        #config_file.close()
     def clearall(x=1):
         global downloads_directory
         #entry boxes
@@ -311,6 +300,7 @@ def settings():
     if checkbox_value_subs.get()==0:
         drop_text_subs.set('')
     drop_subs = ttk.Combobox(top, textvariable=drop_text_subs)
+    #subtitles=['english','spanish','danish','japanese']
     drop_subs['values'] = subtitles
     drop_subs.grid(row=0, column=1,sticky=W+E)
     label_subs = Label(top, text='Subtitles')
@@ -459,6 +449,7 @@ entry.grid(row=0, column=1,columnspan=3) #place the entry boxes in the window
 button_1.grid(row=0, column=4) #place a button in the window
 button_2.grid(row=1, column=4)
 button_3.grid(row=1, column=3)
+#drop.grid(row=1, column=2)
 drop1.grid(row=1, column=1)
 checkbox_1.grid(row=1,column=2)
 
