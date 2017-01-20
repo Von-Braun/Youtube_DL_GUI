@@ -27,7 +27,7 @@ Installation(in this order)
 
 * python
 
-  * goto https://www.python.org/download/
+  * go to https://www.python.org/download/
 
   * click download python 2.x.x
 
@@ -40,13 +40,13 @@ Installation(in this order)
 * ffmpeg
 
 1. 
-  * [32-bit]: goto http://ffmpeg.zeranoe.com/builds and download the 32-bit static installer
+  * [32-bit]: go to http://ffmpeg.zeranoe.com/builds and download the 32-bit static installer
 
-  * [64-bit]: goto http://ffmpeg.zeranoe.com/builds and download the 64-bit static installer
+  * [64-bit]: go to http://ffmpeg.zeranoe.com/builds and download the 64-bit static installer
 
 2. copy the directory ffmpeg was installed to
 
-3. goto Control Panel\System and Security\System\advanced system settings
+3. go to Control Panel\System and Security\System\advanced system settings
 
 4. click the advanced tab and goto environmental variables
 
@@ -88,7 +88,7 @@ You will first see three buttons, a checkbox,dropbox & entry box:
 
 **[Settings]**
 
-  *This allows you to configure how the file should be downloaded. More is explained in the Settings menu section.
+  * This allows you to configure how the file should be downloaded. More is explained in the Settings menu section.
 
 
 Settings Menu
@@ -118,11 +118,11 @@ When opened you will see:
 
 **[clear]**
 
-Erases all data from the entry boxes(not including directory) and checkboxes
+  * Erases all data from the entry boxes(not including directory) and checkboxes
 
 **[Subtitles]**
 
-enter or select the two-charecter code of the requested launguage subtitles
+  * Enter or select the two-charecter code of the requested launguage subtitles
 
 **[Formats]**
 
@@ -138,27 +138,27 @@ options:
 
 **[Video Format]**
 
-Select the files output format
+  * Select the files output format
 
 **[Quality]**
 
-This allows you to specifically select the videos quality. Your file will FAIL to download if the selected quality is not available.
+  * This allows you to specifically select the videos quality. Your file will FAIL to download if the selected quality is not available.
 
 **[Arguments]**
 
-Any extra arguments for youtube-dl seperated by spaces. Some examples are included.
+  * Any extra arguments for youtube-dl seperated by spaces. Some examples are included.
 
 **[Audio Formats]**
 
-Only downloads audio and outputs to this format
+  * Only downloads audio and outputs to this format
 
 **[Temporary Directory]**
 
-allows you to select a temporary directory to place the downloaded file.
+  * Allows you to select a temporary directory to place the downloaded file.
 
 **[Directory]**
 
-The current directory of the downloads folder.
+  * The current directory of the downloads folder.
 
 
 Bug Reporting & contact info
