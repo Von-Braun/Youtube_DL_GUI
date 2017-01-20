@@ -2,9 +2,12 @@ What's Included
 ---------------
 
 NAME------------Description--------------------------------------------------
-README.TXT     #This contains all the documentation and info for this program
-updater.py     #this will update youtube-dl
-youtube-gui.pyw #this is the main program that you will run
+
+README.TXT:     this contains all the documentation and info for this program
+
+updater.py:     this will update youtube-dl
+
+youtube-gui.pyw:  this is the main program that you will run
 
 
 Required
@@ -22,7 +25,7 @@ python
 Installation(in this order)
 ---------------------------
 
-==python==
+* python
 
 goto https://www.python.org/download/
 
@@ -30,31 +33,31 @@ click download python 2.x.x
 
 run the downloaded installer
 
-==youtube-dl==
+* youtube-dl
 
 type "pip install youtube_dl" into the cmd prompt
 
-==ffmpeg==
+* ffmpeg
 
 [32-bit]
 
-goto http://ffmpeg.zeranoe.com/builds and download the 32-bit static installer
+1. goto http://ffmpeg.zeranoe.com/builds and download the 32-bit static installer
 
 [64-bit]
 
-goto http://ffmpeg.zeranoe.com/builds and download the 64-bit static installer
+1. goto http://ffmpeg.zeranoe.com/builds and download the 64-bit static installer
 
-copy the directory ffmpeg was installed to
+2. copy the directory ffmpeg was installed to
 
-goto Control Panel\System and Security\System\advanced system settings
+3. goto Control Panel\System and Security\System\advanced system settings
 
-click the advanced tab and goto environmental variables
+4. click the advanced tab and goto environmental variables
 
-edit path in systems variables and add ";<ffmpeg/bin directory>"
+5. edit path in systems variables and add ";<ffmpeg/bin directory>"
 
-e.g. ";E:\ffmpeg-20151215-git-65877ab-win64-static\bin
+6. e.g. ";E:\ffmpeg-20151215-git-65877ab-win64-static\bin
 
-edit PATHTEXT in systems variables and add ";.PY;.PYW"
+7. edit PATHTEXT in systems variables and add ";.PY;.PYW"
 
 
 How to use
@@ -62,17 +65,13 @@ How to use
 
 If this is the first time, please run youtube-dl.pyw.
 
-That will generate config.ini(stores settings) and the downloads folder(where
-
-your downloads will be stored).
+That will generate config.ini(stores settings) and the downloads folder(where your downloads will be stored).
 
 You will first see three buttons, a checkbox,dropbox & entry box:
 
 [Paste & Download]
 
-This will pull a url from the clipboard and download the file. It will be
-
-placed in the selected directory.
+This will pull a url from the clipboard and download the file. It will be  placed in the selected directory.
 
 [Open Folder]
 
@@ -80,17 +79,11 @@ This will open the selected directory.
 
 [dropbox]
 
-Enter a folder name(or select from the dropdown menu) to select the folder
-
-to place downloads in(all folders are in the downloads folder). If a folder
-
-does not exist it will be created.
+Enter a folder name(or select from the dropdown menu) to select the folder to place downloads in(all folders are in the downloads folder). If a folder does not exist it will be created.
 
 [Download Playlist]
 
-If this is checked youtube-dl will attempt to download the playlist in the
-
-url.
+If this is checked youtube-dl will attempt to download the playlist in the url.
 
 [Entry Box]
 
@@ -98,9 +91,7 @@ This shows the last downloaded url.
 
 [Settings]
 
-This allows you to configure how the file should be downloaded. More is
-
-explained in the Settings menu section.
+This allows you to configure how the file should be downloaded. More is explained in the Settings menu section.
 
 
 Settings Menu
@@ -108,70 +99,67 @@ Settings Menu
 
 When opened you will see: 
 
-Subtitles
+* Subtitles
 
-Formats
+* Formats
 
-Video Format
+* Video Format
 
-Quality
+* Quality
 
-Arguments
+* Arguments
 
-Audio Format
+* Audio Format
 
-Temporary Directory
+* Temporary Directory
 
-Directory
+* Directory
 
-Clear
+* Clear
 
-And lots of keep checkboxes
+* And lots of keep checkboxes
 
-[clear]
+**[clear]**
 
 Erases all data from the entry boxes(not including directory) and checkboxes
 
-[Subtitles]
+**[Subtitles]**
 
 enter or select the two-charecter code of the requested launguage subtitles
 
-[Formats]
+**[Formats]**
 
 options:
 
--f bestaudio #get the highest quality audio only/no video
+* -f bestaudio #get the highest quality audio only/no video
 
--f bestvideo #same as bestaudio but with video
+* -f bestvideo #same as bestaudio but with video
 
--f worst #get worst video and audio quality
+* -f worst #get worst video and audio quality
 
--f best #get worst video and audio quality
+* -f best #get worst video and audio quality
 
-[Video Format]
+**[Video Format]**
 
 Select the files output format
 
-[Quality]
+**[Quality]**
 
-This allows you to specifically select the videos quality. Your file will FAIL
+This allows you to specifically select the videos quality. Your file will FAIL to download if the selected quality is not available.
 
-to download if the selected quality is not available.
+**[Arguments]**
 
-[Arguments]
+Any extra arguments for youtube-dl seperated by spaces. Some examples are included.
 
-Any extra arguments for youtube-dl seperated by spaces. Some examples are
-included.
-
-[Audio Formats]
+**[Audio Formats]**
 
 Only downloads audio and outputs to this format
 
-[Temporary Directory]
+**[Temporary Directory]**
 
 allows you to select a temporary directory to place the downloaded file.
 
-[Directory]
+**[Directory]**
 
 The current directory of the downloads folder.
 
