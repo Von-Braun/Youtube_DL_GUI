@@ -1,3 +1,7 @@
+What This Program Does
+----------------------
+This is a GUI for the command line program [**Youtube-DL.**](https://rg3.github.io/youtube-dl/)
+
 What's Included
 ---------------
 
